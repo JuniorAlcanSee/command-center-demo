@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>AlcanSee Command Center</title>
+<link rel="icon" type="image/png" href="assets/icone-alcansee.png">
+<script>try { document.documentElement.dataset.theme = localStorage.getItem('cc_theme') || 'light'; } catch (e) { document.documentElement.dataset.theme = 'light'; }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<aside class="top" id="top" hidden>
+  <a class="brand" href="#/" aria-label="AlcanSee Digital, início"><img src="assets/logo-alcansee.png" alt="AlcanSee Digital"></a>
+  <div class="quick"><button type="button" id="quick-new">+ Novo</button><button type="button" id="quick-search" class="ghost" title="Atalho: Cmd ou Ctrl + K">Buscar</button></div>
+  <nav>
+    <div class="navgroup">
+      <a href="#/painel" data-nav="painel">Visão geral</a>
+      <a href="#/hoje" data-nav="hoje">Hoje</a>
+      <a href="#/carteira" data-nav="carteira">Carteira</a>
+      <a href="#/pendencias" data-nav="pendencias">Pendências</a>
+      <a href="#/caixa" data-nav="caixa">Avisos <span class="count" id="inbox-count" hidden></span></a>
+    </div>
+    <div class="navgroup">
+      <span class="navlabel">Rotina</span>
+      <a href="#/reunioes" data-nav="reunioes">Reuniões</a>
+      <a href="#/daily" data-nav="daily">Daily</a>
+      <a href="#/1a1" data-nav="1a1">1:1</a>
+    </div>
+    <div class="navgroup">
+      <span class="navlabel">Negócio</span>
+      <a href="#/vencimentos" data-nav="vencimentos">Operação Renova</a>
+      <a href="#/comercial" data-nav="comercial">Comercial</a>
+    </div>
+    <details class="navgroup navmore">
+      <summary class="navlabel">Configurações</summary>
+      <a href="#/conciliacao" data-nav="conciliacao">Vínculos pendentes <span class="count" id="queue-count" hidden></span></a>
+      <a href="#/fontes" data-nav="fontes">Fontes de dados</a>
+    </details>
+  </nav>
+  <div class="me">
+    <a href="#/senha" id="me-name" class="small" title="Trocar senha"></a>
+    <div class="me-actions"><button class="ghost" id="refresh" type="button" hidden title="Lê agora todas as fontes ligadas (Notion, WhatsApp, Meta, reuniões) e recarrega a tela">Atualizar dados</button><button class="ghost" id="theme-toggle" type="button">Tema escuro</button><button class="ghost" id="logout" type="button">Sair</button></div>
+  </div>
+</aside>
+<div class="demo-bar" id="demo-bar" hidden>Você entrou com um usuário de demonstração: tudo aqui é dado de teste.</div>
+<main id="view" aria-live="polite"></main>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="demo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
